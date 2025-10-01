@@ -4,7 +4,6 @@ using Microsoft.Extensions.Configuration;
 
 namespace core8_svelte_sybase.Services
 {
-
     public interface ISybaseConnectionFactory
     {
         IDbConnection CreateConnection();
@@ -13,7 +12,6 @@ namespace core8_svelte_sybase.Services
     public class SybaseConnectionFactory : ISybaseConnectionFactory
     {
         private readonly string _connectionString;
-
 
         public SybaseConnectionFactory(IConfiguration configuration)
         {
@@ -26,6 +24,5 @@ namespace core8_svelte_sybase.Services
             connection.Open(); // The connection should be opened by the factory
             return connection;
         }
-    }    
-    
+    }        
 }

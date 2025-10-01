@@ -41,7 +41,6 @@ namespace core8_svelte_sybase.Controllers.Users
         _env = env;        
     }  
 
-
         [HttpPatch("/api/updateprofile/{id}")]        
         public async Task<IActionResult> updateUser(int id, [FromBody]UserUpdate model) {
             var user = _mapper.Map<User>(model);

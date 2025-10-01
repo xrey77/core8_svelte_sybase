@@ -55,8 +55,8 @@ namespace core8_svelte_sybase.Controllers.Users
                 });
 
             } catch(AppException ex) {
-                return BadRequest(new {
-                    statuscode = 400,
+                return NotFound(new {
+                    statuscode = 404,
                     message = ex.Message
                 });
 

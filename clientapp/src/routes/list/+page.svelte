@@ -107,7 +107,6 @@ const lastPage = (event: any) => {
         {/each}
     </tbody>
     </table>
-
     
      <nav aria-label="Page navigation example">
         <ul class="pagination">

@@ -2,8 +2,7 @@ using System;
 using System.Globalization;
 
 namespace core8_svelte_sybase.Helpers
-{
-    
+{    
     public class AppException : Exception
     {
 
@@ -14,5 +13,4 @@ namespace core8_svelte_sybase.Helpers
         {
         }
     }
-
 }
