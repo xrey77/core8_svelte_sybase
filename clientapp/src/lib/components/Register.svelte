@@ -30,9 +30,16 @@
     await api.post("/signup", jsondata)
         .then((res: any) => {
                 message = res.data.message;
-                
+                window.setTimeout(() => {
+                    message = '';
+                }, 3000);
+                return;
           }, (error: any) => {
-                message = error.response.data.message;
+                if (error.response){
+                  message = error.response.data.message;
+                } else {
+                    message = error.message;                    
+                }
                 window.setTimeout(() => {
                     message = '';
                 }, 3000);

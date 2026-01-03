@@ -35,8 +35,12 @@ let prods: any[] = [];
             message = "keyword not found....";
           }
       }, (error: any) => {
+          if (error.response) {
+            message = error.response.data.message;
+          } else {
+            message = error.message;
+          }
           isfound = false;
-          message = error.response.data.message;
           totpage = 0;
       });    
       window.setTimeout(() => {

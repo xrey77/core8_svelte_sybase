@@ -52,7 +52,11 @@
 
                 }
           }, (error: any) => {
-                message = error.response.data.message;
+                if (error.response) {
+                  message = error.response.data.message;
+                } else {
+                  message = error.message;
+                }
                 window.setTimeout(() => {
                     message = '';
                     isdisable = false;

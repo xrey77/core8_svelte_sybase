@@ -71,11 +71,11 @@ namespace core8_svelte_sybase.Controllers.Users
                 } catch(Exception ex) {
                     return BadRequest(new { statuscode = 400, message = ex.Message });
                 }
-                return Ok(new {statuscode = 200, message= "Your Mailtoken has been sent to your Email Address", etoken = etoken});
+                return Ok(new { message= "Your Mailtoken has been sent to your Email Address", etoken = etoken});
            }
             catch (AppException ex)
             {
-                return BadRequest(new { statuscode = 400, message = ex.Message });
+                return BadRequest(new { message = ex.Message });
             }
 
         }

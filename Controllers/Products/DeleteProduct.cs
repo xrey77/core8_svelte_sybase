@@ -42,9 +42,9 @@ namespace core8_svelte_sybase.Controllers.Products
         public IActionResult PurgeProduct(int id) {
             try {                
                 _productService.ProductDelete(id);
-                return Ok(new {statuscode = 200, message = "Product has been deleted."});
+                return Ok(new { message = "Product has been deleted."});
             } catch(AppException ex) {
-               return BadRequest(new {statuscode = 400, Message = ex.Message});
+               return BadRequest(new {Message = ex.Message});
             }
         }
     }    

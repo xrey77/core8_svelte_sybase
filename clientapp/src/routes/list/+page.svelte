@@ -35,11 +35,16 @@ const fetchProducts = (pg: any) => {
           page = res.data.page;
           isfound = true;
       }, (error: any) => {
-          message = error.response.data.message;
+          if (error.response) {
+            message = error.response.data.message;
+          } else {
+            message = error.message;
+          }
+          window.setTimeout(() => {
+              message = '';
+          }, 3000);              
+
       });
-      window.setTimeout(() => {
-        message = '';
-    }, 3000);              
   }
 
   onMount(() => {

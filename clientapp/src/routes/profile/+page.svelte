@@ -85,12 +85,20 @@
     }})
     .then((res: any) => {
             message = res.data.message;
+            window.setTimeout(() => {
+              message = '';
+            }, 3000);    
       }, (error: any) => {
-            message = error.response.data.message;
+            if (error.response) {
+              message = error.response.data.message;
+            } else {
+              message = error.message;
+            }
+            window.setTimeout(() => {
+              message = '';
+            }, 3000);    
+
     });
-    window.setTimeout(() => {
-      message = '';
-    }, 3000);    
   };
 
   function changePicture(event: any) {
@@ -117,11 +125,16 @@
 
             }, 3000);    
         }, (error: any) => {
+          if (error.response) {
               message = error.response.data.message;
+            } else {
+              message = error.message;
+            }
+            window.setTimeout(() => {
+              message = '';
+            }, 3000);
+                  
         });
-        window.setTimeout(() => {
-          message = '';
-        }, 3000);
     } 
   }
 
@@ -197,13 +210,18 @@
     .then((res: any) => {
           message = res.data.message;
       }, (error: any) => {
-            message = error.response.data.message;
+            if (error.response) {
+              message = error.response.data.message;
+            } else {
+              message = error.message;
+            }
+            window.setTimeout(() => {
+              message = '';
+              newpassword = '';
+              confnewpassword = '';
+            }, 3000);
+            return;            
     });
-    window.setTimeout(() => {
-      message = '';
-      newpassword = '';
-      confnewpassword = '';
-    }, 3000);
   }
 
    async function enableMFA(e: any) {
@@ -221,7 +239,11 @@
         }, 3000);
 
       }, (error: any) => {
-        message = error.response.data.message;
+        if (error.response) {
+              message = error.response.data.message;
+            } else {
+              message = error.message;
+            }        
         window.setTimeout(() => {
           message = '';
         }, 3000);
@@ -244,7 +266,11 @@
         }, 3000);
 
       }, (error: any) => {
-        message = error.response.data.message;
+        if (error.response) {
+              message = error.response.data.message;
+            } else {
+              message = error.message;
+            }        
         window.setTimeout(() => {
           message = '';
         }, 3000);

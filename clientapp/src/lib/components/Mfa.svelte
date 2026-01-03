@@ -48,12 +48,17 @@
                   window.location.reload();
                 },3000);
           }, (error: any) => {
-               message = error.response.data.message;
+            if (error.response) {
+              message = error.response.data.message;
+            } else {
+              message = error.message;
+            }
+            window.setTimeout(() => {
+              message = '';
+              otp = '';
+            }, 3000);    
+            return;
         });            
-        window.setTimeout(() => {
-          message = '';
-          otp = '';
-        }, 3000);    
   };
 
 </script>

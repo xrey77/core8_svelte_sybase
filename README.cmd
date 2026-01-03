@@ -17,9 +17,9 @@ Features :
 4. Product Listings/Catalogs/Search and Pagination
 5. User Account Activation via Email
 6. Auto Mapper Dependency Injection
-7. Swagger RESTful API Documentation
-   https://localhost:7286/swagger/
+7. Swagger RESTful API Documentation, https://localhost:7286/swagger/index.html
 
+   
 If you want to test, do the following:
 1. Setup DATAGRIP/SYBASE Docker container
 2. Change Username and Password in appsettings.json, SYBASE connection settings

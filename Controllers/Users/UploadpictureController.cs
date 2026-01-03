@@ -65,14 +65,14 @@ namespace core8_svelte_sybase.Controllers.Users
                             string file = "https://localhost:7286/users/00"+model.Id.ToString()+".jpg";
                             await _userService.UpdatePicture(model.Id, file);                            
                         }
-                        return Ok(new { statuscode = 200, message = "Profile Picture has been updated."});
+                        return Ok(new { message = "Profile Picture has been updated."});
                     }
                     catch (Exception ex)
                     {
-                        return BadRequest(new {statuscode = 400, message =ex.Message});
+                        return BadRequest(new { message =ex.Message});
                     }
                 }
-                return NotFound(new { statuscode = 404, message = "Profile Picture not found."});
+                return NotFound(new { message = "Profile Picture not found."});
         }
     }
     

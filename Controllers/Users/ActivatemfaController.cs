@@ -53,13 +53,13 @@ namespace core8_svelte_sybase.Controllers.Users
                 var imageUrl = setupInfo.QrCodeSetupImageUrl;
                 if (model.Twofactorenabled == true) {
                     await _userService.ActivateMfa(id, true, imageUrl);
-                    return Ok(new {statuscode = 200, message="2-Factor Authenticator has been enabled.", qrcodeurl=imageUrl});
+                    return Ok(new {message="2-Factor Authenticator has been enabled.", qrcodeurl=imageUrl});
                 } else {
                     await _userService.ActivateMfa(id, false, imageUrl);
-                    return Ok(new {statuscode = 200, message="2-Factor Authenticator has been disabled.", qrcodeurl=imageUrl});
+                    return Ok(new {message="2-Factor Authenticator has been disabled.", qrcodeurl=imageUrl});
                 }
             } else {
-                return NotFound(new {statuscode = 404, message="User not found."});
+                return NotFound(new {message="User not found."});
             }
         }
     }    

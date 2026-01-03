@@ -44,11 +44,11 @@ namespace core8_svelte_sybase.Controllers.Users
             try
             {
               await _userService.Delete(id);
-            return Ok(new {statuscode = 200, message = "Successfully Deleted."});
+            return Ok(new {message = "Successfully Deleted."});
            }
             catch (AppException ex)
             {
-                return BadRequest(new { statuscode = 400, message = ex.Message });
+                return BadRequest(new { message = ex.Message });
             }
 
         }

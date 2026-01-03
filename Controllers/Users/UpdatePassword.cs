@@ -48,11 +48,11 @@ namespace core8_svelte_sybase.Controllers.Users
             try
             {
                 await _userService.UpdatePassword(user, model.Password_hash);
-                return Ok(new {statuscode=200, message="Your profile password has been updated.",user = model});
+                return Ok(new {message="Your profile password has been updated.",user = model});
             }
             catch (AppException ex)
             {
-                return BadRequest(new { statuscode = 400, message = ex.Message });
+                return BadRequest(new { message = ex.Message });
             }
         }
 
